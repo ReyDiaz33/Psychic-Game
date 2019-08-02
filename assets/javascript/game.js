@@ -8,3 +8,9 @@ var losses = 0;
 var guessesLeft = 9;
 var letersGuessed = [];
 var computerGuess = []; 
+
+window.onload = function(){
+    var compGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+    computerGuess.push(compGuess);
+    console.log(computerguess[0]);
+}
