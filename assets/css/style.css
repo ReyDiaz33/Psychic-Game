@@ -5,5 +5,9 @@ h1{
 }
 
 p{
-    padding-bottom: 10px;
+    padding-bottom: 5px;
+}
+
+li{
+    padding-bottom: 5px;
 }
