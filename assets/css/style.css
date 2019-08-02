@@ -1,13 +1,35 @@
+
+body{
+    background-image: url(../images/mewtwo\ -center.png);
+    background-size: cover;   
+}
+
+
 h1{
+    color: white;
     font-size: 20px;
     padding-bottom: 10px;
     font-weight: bold;
+    text-align: center;
 }
 
 p{
-    padding-bottom: 5px;
+        color: white; 
+        /* padding-bottom: 5px; */
+        text-align: left;
+        margin-left: 50px;
+}
+
+ul{
+    color: white;
+    /* padding-bottom: 5px; */
+    text-align: left;
+    margin-left: 50px;
 }
 
 li{
+    color: white;
     padding-bottom: 5px;
+    text-align: left;
 }
+

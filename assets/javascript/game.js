@@ -6,11 +6,22 @@ var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l
 var win = 0;
 var losses = 0;
 var guessesLeft = 9;
-var letersGuessed = [];
+var lettersGuessed = [];
 var computerGuess = []; 
 
-window.onload = function(){
-    var compGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-    computerGuess.push(compGuess);
-    console.log(computerguess[0]);
-}
+var length = computerChoices.length;
+console.log(length);
+
+var random = Math.floor((Math.random() * length));
+console.log(random);
+
+
+
+/*
+computer picks a letter 
+person guesses letter
+if right then wins
+if wrong has 9 more chances 
+if wrong 9 times losses
+
+*/
