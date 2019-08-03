@@ -3,7 +3,7 @@ var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l
 "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
 // wins losses guesses left and computer guesses
-var win = 0;
+var wins = 0;
 var losses = 0;
 var guessesLeft = 9;
 var lettersGuessed = [];
@@ -14,8 +14,16 @@ function getRandomLetter() {
     return computerChoices[random];
 }
 
-var choosenLetter = getRandomLetter();
-console.log('Letter Chosen is:',choosenLetter); // TODO: delete
+var chosenLetter = getRandomLetter();
+
+
+console.log('Initialized...');
+console.log('wins: ', wins);
+console.log('losses:', losses);
+console.log('guessesLeft:', guessesLeft);
+console.log('lettersGuessed',lettersGuessed);
+console.log('chosenLetter',chosenLetter);
+
 
 document.onkeypress = function(event) {
     // Keypress event sent from browser.
@@ -25,11 +33,51 @@ document.onkeypress = function(event) {
     var charCode = event.which || event.keyCode;
 
     // Convert it to a character string.
-    var charStr = String.fromCharCode(charCode);
+    var letterTyped = String.fromCharCode(charCode);
     
     // Do something with it, yo!
-    console.info('user chose:', charStr);
+    console.info('user chose:', letterTyped);
 
+    if (letterTyped === chosenLetter){
+        // you won
+        wins++;
+        lettersGuessed = [];
+        chosenLetter = getRandomLetter();
+        guessesLeft = 9;
+        
+        console.info('You won!!!');
+        console.log('wins: ', wins);
+        console.log('losses:', losses);
+        console.log('guessesLeft:', guessesLeft);
+        console.log('lettersGuessed',lettersGuessed);
+        console.log('chosenLetter',chosenLetter);
+
+    }
+    else{
+        // you did not win
+
+        guessesLeft--;
+
+        if (guessesLeft === 0) {
+            // reset the game
+            losses++;
+            lettersGuessed = [];
+            chosenLetter = getRandomLetter();
+            guessesLeft = 9;
+        }
+        else {
+            // keep going.
+            lettersGuessed.push(letterTyped);
+        }
+
+        console.info('you did not win...');
+        console.log('wins: ', wins);
+        console.log('losses:', losses);
+        console.log('guessesLeft:', guessesLeft);
+        console.log('lettersGuessed',lettersGuessed);
+        console.log('chosenLetter',chosenLetter);
+    }
+     
     /*
         -> Did the user win? 
             -> yes: what do we need to do?
@@ -48,8 +96,9 @@ document.onkeypress = function(event) {
                  -> no 
                    -> add to gueses so far
     */
-
   };
+
+  
 
 /*
 computer picks a random letter (X) 
