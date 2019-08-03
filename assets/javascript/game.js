@@ -52,6 +52,8 @@ document.onkeypress = function(event) {
         console.log('lettersGuessed',lettersGuessed);
         console.log('chosenLetter',chosenLetter);
 
+        document.getElementById("wins").innerText = wins;
+
     }
     else{
         // you did not win
@@ -70,12 +72,17 @@ document.onkeypress = function(event) {
             lettersGuessed.push(letterTyped);
         }
 
+        document.getElementById('losses').innerText = losses;
+
+
         console.info('you did not win...');
         console.log('wins: ', wins);
         console.log('losses:', losses);
         console.log('guessesLeft:', guessesLeft);
         console.log('lettersGuessed',lettersGuessed);
         console.log('chosenLetter',chosenLetter);
+
+        document.getElementById('guessesSoFar').innerText = lettersGuessed;
     }
      
     /*
