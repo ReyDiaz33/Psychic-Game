@@ -54,11 +54,14 @@ document.onkeypress = function(event) {
 
         document.getElementById("wins").innerText = wins;
 
+        alert("YOU WIN: YOU HAVE DEFEATED MEWTWO!");
+
     }
     else{
         // you did not win
-
-        guessesLeft--;
+        guessesLeft -- ;
+        document.getElementById("guessesLeft").innerText = guessesLeft;
+        
 
         if (guessesLeft === 0) {
             // reset the game
@@ -66,6 +69,8 @@ document.onkeypress = function(event) {
             lettersGuessed = [];
             chosenLetter = getRandomLetter();
             guessesLeft = 9;
+
+            alert("YOU LOSE: MEWTWO HAS DEFEATED YOU.");
         }
         else {
             // keep going.
